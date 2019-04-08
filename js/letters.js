@@ -20,14 +20,16 @@ function countLetters(counter, sample_text) {
   if (sample_text.length === 0) {
     return
   }
-  if (counter.hasOwnProperty(sample_text[sample_text.length - 1].toLowerCase())) {
-    let keyname = sample_text[sample_text.length - 1].toLowerCase();
 
+  let lastLetter = sample_text[sample_text.length - 1]
+
+  if (counter.hasOwnProperty(lastLetter.toLowerCase())) {
+    let keyname = lastLetter.toLowerCase();
     counter[keyname]++
   }
-  sample_text = sample_text.slice(0, -1)
-  console.log(sample_text)
-  countLetters(counter, sample_text)
+
+  sample_text = sample_text.slice(0, -1);
+  countLetters(counter, sample_text);
 }
 
 $(document).ready(function () {
@@ -36,4 +38,4 @@ $(document).ready(function () {
 });
 
 
-// countLetters(counter, sample_text)
+
